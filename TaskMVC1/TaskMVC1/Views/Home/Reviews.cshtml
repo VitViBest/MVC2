@@ -1,0 +1,49 @@
+﻿@model TaskMVC1.Models.Home.HomeReviewsVM
+
+@{
+    ViewBag.Title = "Отзвывы";
+    @Styles.Render("~/Content/main-styles")
+}
+
+@Styles.Render("~/Content/reviews")
+
+<div class="row">
+    <div class="col-12">
+        @using (Html.BeginForm())
+        {
+            <div class="input-group">
+                <input type="text" name="Date" class="form-control" value="@System.DateTime.Now.Date.ToString("dd.MM.yyyy")" disabled />
+            </div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" for="name">Имя</span>
+                </div>
+                <input id="name" name="Name" type="text" class="form-control" required/>
+            </div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span for="review" class="input-group-text">Отзыв</span>
+                </div>
+                <textarea id="review" name="Text" class="form-control" required></textarea>
+            </div>
+            <div class="input-group">
+                <button type="submit" class="btn btn-success">Отправить</button>
+            </div>
+        }
+    </div>
+    @foreach (var i in Model.Reviews)
+    {
+        <hr class="col-12" />
+        <div class="col-12 row reviews">
+            <div class="col-4">
+                @i.Name
+            </div>
+            <div class=" col-6 text-right">
+                @i.Date.ToString("dd.MM.yyyy")
+            </div>
+            <div class="col-12">
+                @i.Text
+            </div>
+        </div>
+      }
+    </div>

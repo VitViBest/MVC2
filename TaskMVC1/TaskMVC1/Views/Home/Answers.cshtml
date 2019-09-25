@@ -1,0 +1,29 @@
+﻿@model List<TaskMVC1.Models.Home.HomeAnswersVM>
+
+@{
+    ViewBag.Title = "Answers";
+}
+
+@Styles.Render("~/Content/answers")
+
+<div id="test" class="text-center">
+    <a href="@Url.Action("Questions","Home")" class="btn btn-primary">Пройти тест</a>
+</div>
+<div  class="row">
+    @foreach (var i in Model)
+    {
+        <hr class="col-12" />
+        <div class="col-12 row">
+            <div class="col-4">
+                @i.Name
+                <div class="text-center">
+                    <a  href="@Url.Action("Show","Home",new {id=i.Id })" class="btn btn-outline-info">Подробнее</a>
+                </div>
+            </div>
+            <div class="col-6 text-right">
+                @i.Date.ToString("dd.MM.yyyy")
+            </div>
+        </div>
+    }
+</div>
+<div id="answers-block"></div>

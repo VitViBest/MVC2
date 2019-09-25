@@ -1,0 +1,36 @@
+﻿@using TaskMVC1.Helpers;
+
+@model TaskMVC1.Models.Home.HomeShowVM
+
+@{
+    ViewBag.Title = "Анкета";
+}
+@Styles.Render("~/Content/show")
+<div id="info" class="container-fluid">
+    <div>
+        <p><b>Дата: </b> @Model.Questionary.Date.ToString("dd.MM.yyyy")</p>
+    </div>
+    <div>
+        <p><b>Имя:</b> @Model.Questionary.Name </p>
+    </div>
+    <div>
+        <p><b>Возраст:</b> @Model.Questionary.Age </p>
+    </div>
+    <div>
+        <p><b>Модель:</b> @Model.Questionary.Article.Title </p>
+    </div>
+    <div>
+        <p><b>Комплектация:</b> @Model.Questionary.Complectation.Name </p>
+    </div>
+    @if (Model.Questionary.Tags != null && Model.Questionary.Tags.Count > 0)
+    {
+        <div>
+            <p>
+                <b>
+                    Дополнительно:
+                </b>
+                @Html.CreateList(Model.Questionary.Tags.Select(x => x.Text).ToArray(), true)
+            </p>
+        </div>
+    }
+</div>

@@ -1,0 +1,19 @@
+﻿.images{
+    height:50%;
+    width:100%;
+}
+
+.article-preview:hover {
+    transform: scale(0.95);
+    cursor: pointer;
+}
+
+.article-date {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: small;
+}
+
+.article-name {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:larger;
+}

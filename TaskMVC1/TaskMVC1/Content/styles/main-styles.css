@@ -1,0 +1,61 @@
+﻿@font-face{
+    font-family:"Forest";
+    src:url("/fonts/Facon.ttf");
+}
+
+body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+main{
+    /*min-height:100vh;*/
+}
+
+.my-nav-item{
+    display:block!important;
+    width:80%!important;
+    margin:auto!important;
+}
+
+.my-nav{
+    border:none;
+}
+
+#site-name {
+    display: inline-block;
+    font-family: Forest;
+    font-size:1.8em;
+    color: #808080;
+    box-sizing:padding-box;
+    vertical-align:central;
+}
+
+#site-header {
+    background-color: #210109;
+}
+
+#up{
+    margin-bottom:15px;
+}
+
+#aside{
+    background-color:#070716;
+    box-sizing:border-box;
+    padding:15px;
+}
+
+.link{
+    color:#808080;
+}
+
+#main{
+    background:#bfc9ca;
+}
+
+#footer {
+    margin-top: 15px;
+    background-color:#100c0c;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    color: #808080;
+}

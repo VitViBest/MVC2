@@ -1,0 +1,55 @@
+﻿@using TaskMVC1.Helpers;
+
+@model TaskMVC1.Models.Home.HomeQuestionsVM
+
+@{
+    /**/
+
+    ViewBag.Title = "Анкета";
+}
+@Styles.Render("~/Content/questions")
+<div id="info">
+    @using (Html.BeginForm("Questions", "Home", FormMethod.Post))
+    {
+        <div class="text-danger">
+            @Html.ValidationSummary()
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="name">Имя</label>
+            </div>
+            <input type="text" class="form-control" id="name" name="Name">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="age">Возраст</label>
+            </div>
+            <input type="text" class="form-control" id="age" name="Age" />
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="model">Желаемая моделю</label>
+            </div>
+            @*<input id="model" type="text" class="form-control" name="model" />*@
+            @Html.DropDownList("Model", Model.Models)
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <label class="input-group-text">Комплектация</label>
+            </div>
+            @Html.CreateRadioList(Model.Complectations, "Complectation")
+        </div>
+
+        <div class="input-group">
+            <div class="container">
+                <h5>Дополнительно:</h5>
+            </div>
+            <br />
+            @Html.CreateCheckList(Model.Tags, "Additional")
+        </div>
+        <div class="input-group">
+            <input type="submit" class="form-control btn btn-success" value="Отправить" />
+        </div>
+    }
+
+</div>
